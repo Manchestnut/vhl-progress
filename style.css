@@ -6,7 +6,15 @@ th:nth-child(1) {
 @media screen and (min-width: 30em) {
   th:nth-child(2),
   td:nth-child(2) {
-    padding-right: 4rem;
+    padding-right: 3rem;
+  }
+}
+td:nth-child(4) {
+  display: none;
+}
+@media screen and (min-width: 30em) {
+  td:nth-child(4) {
+    display: block;
   }
 }
 #indicator {
