@@ -3,6 +3,9 @@ td:nth-child(1),
 th:nth-child(1) {
   text-align: start;
 }
+body {
+  background-image: url("images/starry-bg.jfif");
+}
 @media screen and (min-width: 30em) {
   th:nth-child(2),
   td:nth-child(2) {
@@ -22,7 +25,12 @@ td:nth-child(4) {
   position: relative;
   bottom: 2rem;
 }
-
+progress {
+  background: red;
+}
+progress::-webkit-progress-value {
+  background-color: rgba(255, 0, 0, 0.603) !important;
+}
 /*! TACHYONS v4.12.0 | http://tachyons.io */
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 html {
