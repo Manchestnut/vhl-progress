@@ -1,21 +1,20 @@
-const totalItems = document.querySelectorAll("td:nth-child(2)");
-const farmedItems = document.querySelectorAll("td:nth-child(3)");
-const progressBar = document.querySelectorAll("progress");
-const totalProgress = document.querySelector("#bar");
+const items = document.querySelectorAll("td progress");
+const bar = document.querySelector("#bar");
 const indicator = document.querySelector("#indicator");
-var farmSum = 0;
-var reqSum = 0;
-for(i=0;i<totalItems.length;i++){
-    var totalNum = parseInt(totalItems[i].textContent);
-    var farmNum = parseInt(farmedItems[i].textContent);
+var num = 0;
+var numTotal = 0;
+var maxTotal = 0;
+var max = 0;
+console.log(items.length);
+for(i=0;i<items.length;i++){
+    num = parseInt(items[i].value);
+    max = parseInt(items[i].max);
 
-    var farmPercent = farmNum * 100;
-    var percent = farmPercent / totalNum;
-    progressBar[i].value = percent;
-    farmSum += farmNum;
-    reqSum += totalNum;
+    numTotal += num;
+    maxTotal += max;
 }
-var totalPercent = (farmSum * 100) / reqSum;
-totalProgress.style.width = totalPercent+"%";
-var rounded = totalPercent.toFixed(2);
+var percent = (numTotal * 100) / maxTotal;
+var rounded = percent.toFixed(2);
+bar.style.width = percent+"%";
 indicator.textContent = rounded+"%";
+console.log(rounded);
